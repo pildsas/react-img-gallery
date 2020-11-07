@@ -18,8 +18,8 @@ export const App = () => {
   const [preview, setPreview] = useState(null);
   const [progress, setProgress] = useState(null);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [totalCount, setTotalCount] = useState(null);
-  const [numItemsPerPage, setNumItemsPerPage] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
+  const [numItemsPerPage, setNumItemsPerPage] = useState(0);
 
   return (
     <div className="container">
