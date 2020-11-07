@@ -52,6 +52,14 @@ const Icon = styled.i`
   font-size: 2rem;
 `;
 
+const Validation = styled.div`
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 184, 184, 1);
+  font-size: 1.2rem;
+  padding: 20px 0px;
+`;
+
 export default function UploadForm(props) {
   const [error, setError] = useState(null);
 
@@ -68,13 +76,14 @@ export default function UploadForm(props) {
   const changeHandler = (e) => {
     const mimeTypes = ["image/png", "image/jpeg"];
     let selected = e.target.files[0];
+    e.target.value = null;
 
     if (selected && mimeTypes.includes(selected.type)) {
       setFile(selected);
       setError(null);
     } else {
       setFile(null);
-      setError("Select jpeg/png image file");
+      setError("Accepted file formats – .jpeg / .png");
     }
   };
 
@@ -129,8 +138,7 @@ export default function UploadForm(props) {
           <Icon className="fas fa-check"></Icon>
         </IconBox>
       </Icons>
+      {error && <Validation>{error}</Validation>}
     </Form>
   );
 }
-
-// {error && <div className="error">{error}</div>}
