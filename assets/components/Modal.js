@@ -40,7 +40,7 @@ const ModalWindow = styled.div`
 `;
 
 const ModalBody = styled.div`
-  padding: 10px;
+  /* padding: 10px; */
   height: 40vh;
 `;
 
@@ -50,31 +50,29 @@ const Image = styled.img`
 `;
 
 const ModalFooter = styled.div`
-  padding: 10px;
-
+  padding: 20px 10px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 const Button = styled.button`
-    border: none;
-    outline: none;
-    height: 50px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    cursor: pointer;
-    width: 48%;
-    font-weight: 600;
+  border: 2px solid rgba(255, 184, 184, 1);
+  outline: none;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 48%;
+  font-weight: 600;
+  color: rgba(255, 184, 184, 1);
+  background: transparent;
+  &:hover {
+    background: rgba(255, 184, 184, 1);
     color: white;
-    ${(props) => {
-      if (props.action == "delete") {
-        return "background: #eb4d4b;";
-      } else if (props.action == "close") {
-        return "background: #badc58;";
-      }
-    }}}
+  }
 `;
 
 export const Modal = () => {
